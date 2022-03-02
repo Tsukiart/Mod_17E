@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script  src ="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+<script>
+        $(document).ready(function(){
+            $("#nome").hide();
+            $("#email").hide();
+            $("#login").hide();
+            $("#pass").hide();
+
+            $("input").focus(function(){
+                $(this).css("background-color","#ff69b4");
+            });
+
+            $("input").blur(function(){
+                $(this).css("background-color","#ffffff");
+            });
+
+            $("img").click(function(){
+                $("img").slideUp("slow",function(){
+                    $("#nome").show();
+                });
+
+            $("#nome").change(function(){
+                $("#email").show();
+                $("#cx_email").focus();
+            });
+
+            $("#email").change(function(){
+                $("#login").show();
+                $("#cx_login").focus();
+            });
+
+            $("#login").change(function(){
+                $("#pass").show();
+                $("#cx_pass").focus();
+            });
+
+            $("#pass").change(function(){
+                $("#nome").fadeOut("slow");
+                $("#email").fadeOut(3000);
+                $("#login").fadeOut(5000);
+                $("#pass").fadeOut(10000);
+                $("img").slideDown(1000);
+            });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Página de Registro</h1>
+    <img src="dontclick.png" width="300" height="200" alt="Início">
+    <br><br><br><br>
+    <p id="nome">Nome: <br><input type="text" name="NomeCompleto"></p>
+    <p id="email">Correio Eletrónico: <br><input id="cx_email" type="text" name="email"></p>
+    <p id="login">Utilizador: <br><input id="cx_login" type="text" name="login"></p>
+    <p id="pass">Palavra-Passe: <br><input id="cx_pass" type="text" name="pass"></p>
+</body>
+</html>
